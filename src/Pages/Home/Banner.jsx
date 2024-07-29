@@ -14,15 +14,17 @@ const Banner = () => {
         <img src={banner1} className="w-full rounded-lg" />
 
         <div className="absolute left-0 top-0 bottom-0 flex  gap-2 text-white bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)] rounded-lg">
-          <div className="w-1/2 pl-24 pt-24 space-y-7">
-            <h1 className="text-6xl font-bold">
-              Affordable Price For Car Servicing
-            </h1>
-            <p className="text-lg">
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
-            </p>
-            <div className="space-x-5">
+          <div className="w-1/2 lg:pl-24 lg:pt-24 space-y-7 flex gap-7  items-center lg:items-start lg:gap-0 lg:flex-col ">
+            <div className="space-y-4">
+              <h1 className="text-6xl font-bold">
+                Affordable Price For Car Servicing
+              </h1>
+              <p className="text-lg">
+                There are many variations of passages of available, but the
+                majority have suffered alteration in some form
+              </p>
+            </div>
+            <div className="lg:space-x-5">
               <button className="btn bg-transparent text-white hover:bg-[#FF3811]">
                 Discover More
               </button>
