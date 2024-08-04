@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import loginImg from "../../assets/images/login/login.svg";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const SignUp = () => {
+  const { handleUserSignup } = useContext(AuthContext);
   const handleSignUp = (e) => {
     e.preventDefault();
 
@@ -12,6 +14,10 @@ const SignUp = () => {
     const pass = form.password.value;
 
     console.log(name, email, pass);
+
+    handleUserSignup(email, pass)
+      .then((res) => console.log(res.user))
+      .catch((error) => console.log(error.message));
   };
   return (
     <div className="lg:flex gap-14 items-center">

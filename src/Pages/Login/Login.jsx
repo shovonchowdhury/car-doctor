@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import loginImg from "../../assets/images/login/login.svg";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
+  const { handleUserLogin } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
 
     const form = e.target;
-    const name = form.name.value;
+
     const email = form.email.value;
     const pass = form.password.value;
 
-    console.log(name, email, pass);
+    console.log(email, pass);
+
+    handleUserLogin(email, pass)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((error) => console.log(error.message));
   };
   return (
     <div className="lg:flex gap-14 items-center">
